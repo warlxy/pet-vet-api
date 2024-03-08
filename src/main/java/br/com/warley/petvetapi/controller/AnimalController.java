@@ -24,7 +24,7 @@ public class AnimalController {
         return animalService.findById(id);
     }
 
-    @PostMapping("/adicinarAnimal")
+    @PostMapping("/adicionarAnimal")
     public Animal save(@RequestBody Animal animal) {
         return animalService.save(animal);
     }
