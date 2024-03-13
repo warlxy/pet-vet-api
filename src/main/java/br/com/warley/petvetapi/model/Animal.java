@@ -34,7 +34,7 @@ public class Animal {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @OneToMany
+    @OneToMany(mappedBy = "animal", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Consulta> consultas;
 
 }

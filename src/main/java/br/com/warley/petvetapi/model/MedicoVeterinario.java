@@ -30,7 +30,7 @@ public class MedicoVeterinario {
     @Column(name = "crmv", nullable = false)
     private String crmv;
 
-    @OneToMany
+    @OneToMany(mappedBy = "medicoVeterinario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Consulta> consultas;
 
 }
