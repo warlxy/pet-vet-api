@@ -1,5 +1,6 @@
 package br.com.warley.petvetapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,7 +31,8 @@ public class MedicoVeterinario {
     @Column(name = "crmv", nullable = false)
     private String crmv;
 
-    @OneToMany(mappedBy = "medicoVeterinario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "medicoVeterinario", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Consulta> consultas;
 
 }
